@@ -6,6 +6,8 @@ define([
 	'use strict';
 
 	var Todo = Backbone.Model.extend({
+	  url: '',
+	  
 		// Default attributes for the todo
 		// and ensure that each todo created has `title` and `completed` keys.
 		defaults: {
