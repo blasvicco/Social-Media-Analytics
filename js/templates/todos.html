@@ -1,0 +1,30 @@
+<div class="view">
+	<div style="display: inline;">
+		<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+		<label><div class="avator"><img src="<%- actor_avator  %>" /></div><%- title %></label>
+		<button class="destroy"></button>
+	</div>
+	<div class="item">
+		<div class="comment">
+			<% if (isUrlContent) { %>
+				<iframe src="<%- activity_message %>" frameBorder="0" width="500px" height="500px"></iframe>
+			<% } else { %>
+				<p><%- activity_message %></p>
+			<% } %>
+		</div>
+		<div class="detail">
+			<div class="actor">
+				<div><b>Date: </b><span><%- activity_date %></span></div>
+				<div><b>Name: </b><a href="<%- actor_url %>" target="_blank"><span><%- actor_name %></span></a></div>
+				<div><b>Username: </b><a href="<%- actor_url %>" target="_blank"><span><%- actor_username %></span></a></div>
+			</div>
+			<div class="plus">
+				<div class="plusItem"><a href="<%- activity_url %>" target="_blank"><img src="img/like.png" /><%- activity_likes %></a></div>
+				<div class="plusItem"><a href="<%- activity_url %>" target="_blank"><img src="img/comment.png" /><%- activity_comments %></a></div>
+				<div class="plusItem"><a href="<%- activity_url %>" target="_blank"><img src="img/share.png" /><%- activity_shares %></a></div>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+</div>
+<input class="edit" value="<%- title %>">

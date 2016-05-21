@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+	<head>
+		<meta charset="utf-8">
+		<title>Social-Media-Analytics</title>
+		<link rel="stylesheet" href="node_modules/app-css/index.css">
+	</head>
+	<body>
+		<section id="myApp">
+			<header id="header">
+				<h1>Social Media</h1>
+				<input id="top-filter" placeholder="Search..." autofocus>
+			</header>
+			<section id="main">
+				<input id="toggle-all" type="checkbox">
+				<label for="toggle-all">Mark all as complete</label>
+				<ul id="todo-list"></ul>
+			</section>
+			<footer id="footer"></footer>
+		</section>
+		<footer id="info">
+			<p>Double-click to edit the title</p>
+			<p>Written by <a href="https://www.linkedin.com/in/blasvicco">Blas Vicco</a></p>
+		</footer>
+		
+		<script data-main="js/main" src="node_modules/requirejs/require.js"></script>
+	</body>
+</html>
