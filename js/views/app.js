@@ -51,6 +51,7 @@ define(['jquery', 'underscore', 'backbone', 'collections/todos', 'views/todos',
 
 		loadMore : function() {
 			Todos.refreshFromServer({
+			  dataType: 'jsonp',
 				success : function(freshData) {
 					Todos.reset(freshData);
 					Todos.each(function(model) {
