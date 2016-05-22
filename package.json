@@ -1,5 +1,4 @@
 {
-  "private": true,
   "dependencies": {
     "backbone": "^1.1.2",
     "backbone.localstorage": "^1.1.16",
@@ -8,5 +7,31 @@
     "requirejs-text": "^2.0.12",
     "underscore": "^1.7.0",
     "express": "~4.5.1"
-  }
+  },
+  "name": "social-media-analytic",
+  "description": "This is a complete example of backboneJs + RequireJs project. The web app will call a RestAPI to retrieve a large JSON that contain a collection of social media metadata. The data will be parsed as a list of item to be reviewed. The user can filter the items in the list by entering a text and pressing enter to performe the searching. The user can also delete an item or select a banch of them to set it as completed. User will be able to clear all the completed reviewed items.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blasvicco/Social-Media-Analytics.git"
+  },
+  "keywords": [
+    "Social",
+    "Media",
+    "Analytics",
+    "BackboneJs",
+    "RequireJs",
+    "NodeJs"
+  ],
+  "author": "Blas vicco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blasvicco/Social-Media-Analytics/issues"
+  },
+  "homepage": "https://github.com/blasvicco/Social-Media-Analytics#readme"
 }
