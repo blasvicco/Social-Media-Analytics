@@ -1,44 +1,45 @@
 /*global define */
 define([
-	'underscore',
-	'backbone',
-	'backboneLocalstorage',
-	'models/todo'
-], function (_, Backbone, Store, Todo) {
-	'use strict';
+    'underscore', 'backbone', 'backboneLocalstorage', 'models/todo'
+], function(_, Backbone, Store, Todo) {
+  'use strict';
 
-	var TodosCollection = Backbone.Collection.extend({
-		// Reference to this collection's model.
-		model: Todo,
+  var TodosCollection = Backbone.Collection.extend({
+    // Reference to this collection's model.
+    model : Todo,
 
-		url: 'https://nuvi-challenge.herokuapp.com/activities',
-		
-		refreshFromServer : function(options) {
-  	    return Backbone.ajaxSync('read', this, options);
-  	},
-		
-		// Save all of the todo items under this example's namespace.
-		localStorage: new Store('todos-backbone'),
+    url : '/getData',
 
-		// Filter down the list of all todo items that are finished.
-		completed: function () {
-			return this.where({'completed': true});
-		},
+    refreshFromServer : function(options) {
+      return Backbone.ajaxSync('read', this, options);
+    },
 
-		// Filter down the list to only todo items that are still not finished.
-		remaining: function () {
-			return this.where({'completed': false});
-		},
+    // Save all of the todo items under this example's namespace.
+    localStorage : new Store('todos-backbone'),
 
-		// We keep the Todos in sequential order, despite being saved by unordered
-		// GUID in the database. This generates the next order number for new items.
-		nextOrder: function () {
-			return this.length ? this.last().get('order') + 1 : 1;
-		},
+    // Filter down the list of all todo items that are finished.
+    completed : function() {
+      return this.where({
+        'completed' : true
+      });
+    },
 
-		// Todos are sorted by their original insertion order.
-		comparator: 'order'
-	});
+    // Filter down the list to only todo items that are still not finished.
+    remaining : function() {
+      return this.where({
+        'completed' : false
+      });
+    },
 
-	return new TodosCollection();
+    // We keep the Todos in sequential order, despite being saved by unordered
+    // GUID in the database. This generates the next order number for new items.
+    nextOrder : function() {
+      return this.length ? this.last().get('order') + 1 : 1;
+    },
+
+    // Todos are sorted by their original insertion order.
+    comparator : 'order'
+  });
+
+  return new TodosCollection();
 });
